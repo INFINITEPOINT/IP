@@ -44,3 +44,16 @@ if __name__ == "__main__":
     print("=== Quantum Byte System - Node Initialization ===\n")
     nodes = launch_nodes(3)
     print("=== Quantum Byte Execution Complete ===")
+
+=== Quantum Byte - Initial Node Loads ===
+Node-1: 70%
+Node-2: 45%
+Node-3: 55%
+Node-4: 80%
+
+[Quantum Byte] Balancing Loads...
+
+[Quantum Byte] Target load per node: 62 %
+Node-1 stable at 70%.
+Node-2 stable at 45%.
+Node-4 overloaded. Redistributing -18%. New load: 62%.
