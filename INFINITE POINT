@@ -35,3 +35,71 @@ if __name__ == "__main__":
     time.sleep(1)
     active_nodes = initialize_nodes(5)
     print("\n[LOG]: Infinite Point Initialization Complete.")
+
+import random
+import time
+
+class InfiniteNode:
+    def __init__(self, node_id):
+        self.id = node_id
+        self.status = "active"
+        self.anomaly_detected = False
+        self.health = 100  # Node health percentage
+
+    def simulate_activity(self):
+        # Random health degradation and anomaly occurrence
+        degradation = random.randint(1, 15)
+        self.health -= degradation
+        if self.health < 50 and random.choice([True, False]):
+            self.anomaly_detected = True
+
+    def self_heal(self):
+        if self.anomaly_detected:
+            print(f"⚠ Anomaly detected in Node-{self.id}. Initiating self-healing...")
+            recovery = random.randint(20, 40)
+            self.health += recovery
+            self.anomaly_detected = False
+            print(f"✔ Node-{self.id} health restored to {self.health}%. Status: STABLE")
+
+    def report_status(self):
+        status = "STABLE" if not self.anomaly_detected else "ANOMALY DETECTED"
+        print(f"Node-{self.id}: Health={self.health}%, Status={status}")
+
+
+class InfinitePointSystem:
+    def __init__(self, node_count=5):
+        self.nodes = [InfiniteNode(node_id=i) for i in range(1, node_count + 1)]
+        self.log = []
+
+    def monitor_nodes(self, cycles=5):
+        print("=== Infinite Point Anomaly Detection System ===\n")
+        for cycle in range(1, cycles + 1):
+            print(f"--- Cycle {cycle} ---")
+            for node in self.nodes:
+                node.simulate_activity()
+                node.report_status()
+                if node.anomaly_detected:
+                    self.log_anomaly(node.id)
+                    node.self_heal()
+            print("\n")
+            time.sleep(1)
+        print("=== Monitoring Complete ===")
+        self.display_logs()
+
+    def log_anomaly(self, node_id):
+        log_entry = {"node": node_id, "timestamp": time.time(), "event": "ANOMALY DETECTED"}
+        self.log.append(log_entry)
+
+    def display_logs(self):
+        print("\n=== Anomaly Logs ===")
+        if not self.log:
+            print("No anomalies detected during monitoring.")
+        else:
+            for entry in self.log:
+                print(f"Node-{entry['node']} | Event: {entry['event']} | Timestamp: {entry['timestamp']:.0f}")
+
+
+if __name__ == "__main__":
+    system = InfinitePointSystem(node_count=4)
+    system.monitor_nodes(cycles=5)
+
