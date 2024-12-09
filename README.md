@@ -1,4 +1,3 @@
-Overview
 Infinite Point is a recursive AI network protocol designed for anomaly detection, network optimization, and dynamic scaling. Acting as the backbone of an evolving ecosystem, Infinite Point lays the foundation for advanced AI systems capable of analyzing, predicting, and visualizing data streams.
 
 This repository includes the current Infinite Point system (v0.6) and teasers for three upcoming models:
@@ -47,8 +46,31 @@ class InfinitePoint:
         else:
             print("✓ No anomalies detected.")
 
-if __name__ == "__main__":
-    system = InfinitePoint(nodes=4)
-    system.activate_nodes()
-    system.recursive_sync(max_cycles=3)
-    print("\nSystem Logs: ", system.anomalies)
+import random
+import time
+
+class Node:
+    def __init__(self, node_id):
+        self.id = node_id
+        self.load = 0  # Represents computational load
+        self.status = "active"
+
+    def generate_load(self):
+        # Random load between 20-100%
+        self.load = random.randint(20, 100)
+        return self.load
+
+class InfinitePointBalancer:
+    def __init__(self, node_count=4):
+        self.nodes = [Node(i) for i in range(1, node_count + 1)]
+        self.threshold = 70  # Load threshold for balancing
+        self.rebalanced_logs = []
+
+    def monitor_and_balance(self):
+        print("[Infinite Point] Monitoring node loads...\n")
+        for cycle in range(3):
+            print(f"Cycle {cycle + 1}:")
+            for node in self.nodes:
+                load = node.generate_load()
+                print(f" - Node-{node.id} Load
+
