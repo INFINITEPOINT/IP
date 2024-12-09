@@ -45,19 +45,6 @@ Planned Capabilities:
 Support for live trend analysis and future projections.
 Visualization of confidence heatmaps over predicted outcomes.
 Architecture Overview
-scss
-Copy code
-+--------------------------------------------------+
-|                    Infinite Point                |
-|       (Core Recursive Framework and System)      |
-+--------------------------------------------------+
-                    |       |       |                 
-      +-------------+       |       +-------------+
-      |                     |                     |
-+-----v-----+       +-------v-------+     +-------v-------+
-| Neural Insight |   | Quantum Byte    |   | Virtual Oracle  |
-| (Data Decoding)|   | (Load Optimization)|   | (Trend Modeling)|
-+-----------+       +---------------+     +---------------+  
 Infinite Point establishes recursion, anomaly detection, and system stability.
 Neural Insight interprets, decodes, and visualizes data patterns.
 Quantum Byte ensures load distribution and performance stability across systems.
