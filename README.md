@@ -1,5 +1,6 @@
 
-![Uploading Screenshot 2024-12-12 183831.png…]()
+
+![Screenshot 2024-12-12 183831](https://github.com/user-attachments/assets/15b47a48-dd21-489b-8a71-80c6841c4c6c)
 
 Infinite Point is the core recursive AI architecture, designed to stabilize, monitor, and optimize dynamic systems. It lays the foundation for a suite of upcoming AI models—Neural Insight, Quantum Byte, and Virtual Oracle—each addressing unique domains in data interpretation, load optimization, and predictive intelligence.
 
